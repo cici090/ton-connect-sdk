@@ -1,0 +1,12 @@
+{
+  "root": "packages/ui-vue/",
+  "targets": {
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "changelogHeader": "# Changelog @tonconnect/ui-vue \n",
+        "push": false
+      }
+    }
+  }
+}
