@@ -19,3 +19,8 @@ runs:
     - name: Build ui-react
       shell: bash
       run: npx nx run ui-react:build
+
+    - name: Build ui-vue
+      shell: bash
+      run: npx nx run ui-vue:build
+
