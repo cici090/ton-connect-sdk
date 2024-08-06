@@ -1,6 +1,6 @@
 import dts from "rollup-plugin-dts";
 // import vue from 'rollup-plugin-vue';
-import vue from '@vitejs/plugin-vue2'
+import vue from '@vitejs/plugin-vue'
 import ts from 'typescript';
 import * as fs from 'fs';
 

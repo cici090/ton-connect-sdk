@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
-import vue2 from "@vitejs/plugin-vue2";
-import vue3 from "@vitejs/plugin-vue";
+import vue from "@vitejs/plugin-vue";
 import path from "path";
 import dts from "vite-plugin-dts";
 import { isVue2, isVue3 } from "vue-demi";
@@ -10,11 +9,7 @@ console.log({ isVue2, isVue3 });
 
 export default defineConfig({
   plugins: [
-    isVue2
-      ? vue2()
-      : vue3({
-        compiler: compiler as any,
-      }),
+    vue(),
     dts({
       insertTypesEntry: true,
     }),

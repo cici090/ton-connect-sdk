@@ -43,6 +43,21 @@ Next, link the `@tonconnect/ui-react` package to your project:
 cd packages/ui-react && npm link
 ```
 
+
+Then, in your [demo dapp](#demo-dapps) directory, run:
+
+
+```shell
+npm link @tonconnect/ui-react
+```
+
+Next, link the `@tonconnect/ui-vue` package to your project:
+
+
+```shell
+cd packages/ui-vue && npm link
+```
+
 Then, in your [demo dapp](#demo-dapps) directory, run:
 
 ```shell
@@ -61,7 +76,9 @@ Replace the `build` script in `packages/ui/package.json` with the following:
 
 > ⚠️ Warning: Patch your `packages/ui/package.json` file as above to ensure watch mode functions correctly during the build process. Remember to revert this patch before releasing a new version. This is a temporary workaround and will be addressed in future updates.
 
-Now, build the `@tonconnect/ui-react` package in watch mode:
+
+Now, build the `@tonconnect/ui-react` package and `@tonconnect/ui-vue` package in watch mode:
+
 
 ```shell
 nx affected:build --parallel=1 --watch
@@ -96,12 +113,13 @@ Update the version of the packages in the following order, one at a time:
  4. `@tonconnect/sdk`
  5. `@tonconnect/ui`
  6. `@tonconnect/ui-react`
+ 7. `@tonconnect/ui-vue`
 
 Only update the packages that have changes or are below another package in this list that has changes. If a package has no changes and is above a package with changes, it does not need to be updated.
 
 If a package depends on another, update the dependency version and make a "chore" commit before moving on to the next package.
 
-For example, if changes were made in `@tonconnect/ui` and `@tonconnect/ui-react`, you should first run the following for `@tonconnect/ui`:
+For example, if changes were made in `@tonconnect/ui` and `@tonconnect/ui-react` and `@tonconnect/ui-vue`, you should first run the following for `@tonconnect/ui`:
 
  - For a beta version:
    ```shell
@@ -161,7 +179,7 @@ After publishing the version of `@tonconnect/ui`, update its version in the `dep
  }
  ```
 
-> TODO: add a step to run `npm install` in `@tonconnect/ui-react` for updating `package-lock.json` file when the step will be tested.
+> TODO: add a step to run `npm install` in `@tonconnect/ui-react` and `@tonconnect/ui-vue` for updating `package-lock.json` file when the step will be tested.
 
 Then, create a "chore" commit to save this change:
 

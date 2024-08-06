@@ -205,13 +205,13 @@ export class WalletsListManager {
             return false;
         }
 
-        const sseBridge = bridge.find(item => (item as { type: string }).type === 'sse');
+        const sseBridge  = bridge.find(item => (item as { type: string }).type === 'sse');
 
         if (sseBridge) {
             if (
-                !('url' in sseBridge) ||
+                !(!sseBridge.hasOwnProperty('url')) ||
                 !(sseBridge as { url: string }).url ||
-                !(value as { universal_url: string }).universal_url
+                !(value as unknown as { universal_url: string }).universal_url
             ) {
                 return false;
             }
@@ -220,7 +220,7 @@ export class WalletsListManager {
         const jsBridge = bridge.find(item => (item as { type: string }).type === 'js');
 
         if (jsBridge) {
-            if (!('key' in jsBridge) || !(jsBridge as { key: string }).key) {
+            if (!(jsBridge.hasOwnProperty('key')) || !(jsBridge as { key: string }).key) {
                 return false;
             }
         }

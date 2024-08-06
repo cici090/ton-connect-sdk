@@ -3,7 +3,7 @@
   "entryPoints": [
     "packages/sdk",
     "packages/ui",
-    "packages/ui-react",
+    // "packages/ui-react",
     "packages/ui-vue",
     "packages/protocol"
   ],
